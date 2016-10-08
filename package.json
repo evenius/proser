@@ -1,0 +1,24 @@
+{
+  "name": "proser",
+  "version": "0.0.1-alpha",
+  "description": "An aspiring poet's companion on the go.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evenius/proser.git"
+  },
+  "author": "Jonathan Gill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evenius/proser/issues"
+  },
+  "homepage": "https://github.com/evenius/proser#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10"
+  }
+}
