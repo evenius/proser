@@ -1,4 +1,4 @@
-const { describe, it } = require('mocha')
+const { describe, it, beforeEach } = require('mocha')
 const sinon = require('sinon')
 const { should, expect, assert } = require('chai')
 
@@ -6,8 +6,7 @@ const { bindRoutes, getIndex } = require('../../../server/routes/routes')
 
 describe('Router', function () {
   describe('Bind routes', function () {
-    var RouterStub = {}
-    var spy =
+    var RouterStub, spy
 
     beforeEach('create simple Router stub', function () {
       spy = sinon.spy()
@@ -24,10 +23,10 @@ describe('Router', function () {
   })
 
   describe('GET /', function () {
-    it('should call res.send', function () {
+    it('should call res.render', function () {
       let req, res
       req = res = {}
-      res.send = sinon.spy()
+      res.render = sinon.spy()
 
       getIndex(req, res)
       expect(res.send.calledOnce).to.equal(true)
