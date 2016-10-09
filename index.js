@@ -1,10 +1,6 @@
-const express = require('express')
-const app = express()
+const { startServer } = require('./server/server')
+const PORT = process.env.port || 2233
 
-app.get('/', function (req, res) {
-  res.send('Okay')
-})
-
-app.listen(2233, function () {
-  console.log('Example app listening on port 2233!')
-})
+// Just start it up
+// console.log(startServer)
+startServer(PORT)

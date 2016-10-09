@@ -16,3 +16,4 @@ An aspiring poet's companion on the go.
 
 
 ## Notes
+- Should I use nodemon in production? Forever? Hm
