@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon .",
+    "dev": "webpack -w",
     "test": "npm run coverage && npm run lint",
     "unit": "mocha --recursive",
     "lint": "standard | snazzy",
@@ -29,7 +30,8 @@
     "preact-hyperscript": "^0.7.0",
     "preact-redux": "^1.2.0",
     "preact-render-to-string": "^3.2.1",
-    "preact-router": "^2.1.0"
+    "preact-router": "^2.1.0",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

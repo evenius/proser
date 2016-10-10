@@ -2,7 +2,9 @@
 const Express = require('express')
 const { join } = require('path')
 const render = require('preact-render-to-string')
-const entry = require('../../client/components/test.js')
+// const entry = require('../../client/components/test.js')
+const entry = () => ('wow')
+
 
 /**
  * Route for /, or, you know, index
