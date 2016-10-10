@@ -1,0 +1,9 @@
+@import "breakpoints";
+
+.logo {
+  font-size: 48px;
+  margin-bottom: 5%;
+  >span:first-child, >span:last-child {
+    font-style:italic;
+  }
+}

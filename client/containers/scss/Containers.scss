@@ -1,0 +1,25 @@
+@import "linear-gradient";
+@import "grids";
+
+
+.container {
+  position: absolute;
+  top:0;
+  left: 0;
+  height:100%;
+  width:100%;
+  margin: 0;
+  padding-top: 20vh;
+  >* {
+    display: block;
+    position: relative;
+    left:25%;
+  }
+
+  &.serene {
+    @include linear-gradient(to bottom, rgba(183, 153, 251, 1) 0%, rgba(0,0,0,0) 100%);
+
+    background-color: #B76767;
+    background-color: rgba(183, 103, 103, 1);
+  }
+}

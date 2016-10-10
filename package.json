@@ -7,7 +7,7 @@
     "start": "nodemon .",
     "dev": "webpack -w",
     "test": "npm run coverage && npm run lint",
-    "unit": "mocha --recursive",
+    "unit": "mocha './**/__tests__/**/*Spec.js' --require ignore-styles",
     "lint": "standard | snazzy",
     "lintFix": "standard --fix | snazzy",
     "coverage": "istanbul cover _mocha"
@@ -38,6 +38,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "chai": "^3.5.0",
+    "ignore-styles": "^5.0.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.1.0",
     "node-sass": "^3.10.1",

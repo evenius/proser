@@ -1,9 +1,19 @@
-body>div {
-  position: absolute;
-  top:0;
-  left: 0;
-  height:100%;
-  width:100%;
-  margin: 0;
+@import "./lib/sass/linear-gradient";
+
+html, body {
+  width: 100%;
+  height: 100%;
   padding: 0;
+  margin: 0;
+}
+
+p,a,h1,h2,h3,h4, input {
+  text-rendering: optimizeLegibility;
+  font-family: 'Garamond', 'Times', 'Times New Roman' serif;
+  color: #FBFBFB;
+  font-weight: lighter;
+}
+
+a, button {
+  text-decoration: underline;
 }

@@ -11,17 +11,6 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['babel-loader']
       },
-      // {
-      //   test: /\.*css$/,
-      //   loader: ExtractTextPlugin.extract({
-      //     allChunks: true,
-      //     loader: 'css-loader'
-      //   })
-      // }
-      // {
-      //   test: /\.*css$/,
-      //   loaders: ["style", "css", "sass"]
-      // }
       {
         test: /\.*css$/,
         loader: ExtractTextPlugin.extract('css!sass', { publicPath: '../'})
@@ -30,7 +19,7 @@ module.exports = {
   },
   devtool: 'source-map',
   sassLoader: {
-   includePaths: [path.resolve(__dirname, "./client/sass")]
+   includePaths: [path.resolve(__dirname, "client/lib/sass")]
  },
  plugins: [
    new ExtractTextPlugin('style.bundle.css', {

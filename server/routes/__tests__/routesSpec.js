@@ -1,8 +1,8 @@
 const { describe, it, beforeEach } = require('mocha')
+const { expect } = require('chai')
 const sinon = require('sinon')
-const { should, expect, assert } = require('chai')
 
-const { bindRoutes, getIndex } = require('../../../server/routes/routes')
+const { bindRoutes, getIndex } = require('../routes')
 
 describe('Router', function () {
   describe('Bind routes', function () {

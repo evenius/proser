@@ -3,8 +3,7 @@ const Express = require('express')
 const { join } = require('path')
 const render = require('preact-render-to-string')
 // const entry = require('../../client/components/test.js')
-const entry = () => ('wow')
-
+const entry = () => ('')
 
 /**
  * Route for /, or, you know, index
@@ -24,7 +23,7 @@ const getIndex = function (req, res) {
  */
 function bindRoutes (Router) {
   Router.use('/src', Express.static(join(__dirname, '../../bin'), {maxage: 1}))
-  Router.get('/', getIndex)
+  Router.get('/*', getIndex)
 
   return Router
 }
