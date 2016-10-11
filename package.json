@@ -4,8 +4,8 @@
   "description": "An aspiring poet's companion on the go.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon .",
-    "dev": "webpack -w",
+    "start": "node .",
+    "dev": "webpack -w & nodemon .",
     "test": "npm run coverage && npm run lint",
     "unit": "mocha './**/__tests__/**/*Spec.js' --require ignore-styles",
     "lint": "standard | snazzy",
@@ -23,15 +23,23 @@
   },
   "homepage": "https://github.com/evenius/proser#readme",
   "dependencies": {
+    "auth0-lock": "^10.4.0",
+    "connect-ensure-login": "^0.1.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "mongodb": "^2.2.10",
+    "mongoose": "^4.6.3",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.5.2",
     "preact": "^6.3.0",
     "preact-hyperscript": "^0.7.0",
     "preact-redux": "^1.2.0",
     "preact-render-to-string": "^3.2.1",
     "preact-router": "^2.1.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "request": "^2.75.0",
+    "request-promise": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
@@ -42,12 +50,16 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.1.0",
     "node-sass": "^3.10.1",
+    "nodemon": "^1.11.0",
     "preact-compat": "^3.7.1",
     "proxyquire": "^1.7.10",
+    "rc-css-transition-group": "^2.1.4",
     "react-textarea-autosize": "^4.0.5",
+    "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.2",
     "sinon": "^1.17.6",
     "standard": "^8.3.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "whatwg-fetch": "^1.0.0"
   }
 }

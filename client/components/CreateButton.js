@@ -7,9 +7,10 @@ require('./scss/createbutton.scss')
  * @method Logo
  * @return {string} – should always be {preact}
  */
-const Logo = () => input('.createbutton', {
+const Logo = ({onClick}) => input('.createbutton', {
   value: 'Create new poem',
-  type: 'text'
+  type: 'text',
+  onClick
 })
 
 module.exports = Logo

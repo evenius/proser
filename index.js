@@ -1,6 +1,5 @@
 const { startServer } = require('./server/server')
-const PORT = process.env.port || 2233
+const config = require('./config')
 
 // Just start it up
-// console.log(startServer)
-startServer(PORT)
+startServer(config)

@@ -5,10 +5,13 @@ services:
     volumes:
       - ./:/proser
     ports:
-      - "2233:2233"
+      - "2233"
     links:
       - mongo
+    environment:
+      MONGO_URI: mongo
+      PORT: 2233
   mongo:
     image: mongo
     ports:
-      - "27017:27017"
+      - "27017"

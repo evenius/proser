@@ -6,7 +6,6 @@ const PoemOwned = require('../components/PoemOwned')
 const PoemList = require('../components/PoemList')
 
 require('./scss/Containers.scss') // Container-sass
-console.log(require('react'))
 
 const Poem = ({dispatch, poemId, user}) => {
   var poem = {

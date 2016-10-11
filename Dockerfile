@@ -8,6 +8,6 @@ COPY package.json /proser
 RUN npm install
 COPY . /proser
 
-EXPOSE 2233
+EXPOSE 27017 2233
 
 CMD ["npm", "start"]

@@ -1,5 +1,8 @@
 const { combineReducers } = require('redux')
 
-module.exports = combineReducers({
-  data: (state, action) => { return state || [] }
-})
+const poem = require('./poem')
+const themes = require('./themes')
+const user = require('./user')
+const auth = require('./auth')
+
+module.exports = combineReducers({poem, themes, user, auth})
