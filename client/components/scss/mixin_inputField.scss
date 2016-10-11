@@ -1,0 +1,7 @@
+@import 'mixin_callToAction';
+
+@mixin inputField {
+  @include callToAction;
+  font-size: 32px;
+  cursor: text;
+}

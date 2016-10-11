@@ -1,0 +1,49 @@
+@import 'clearfix';
+@import "linear-gradient";
+
+
+.themeSelecter {
+  @extend %clearfix;
+  margin-bottom: 40px;
+  .previewer {
+    float:left;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    >* {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    p {
+      line-height: 20px;
+      margin:0;
+      text-decoration: underline;
+    }
+  }
+  .circle {
+    justify-content: center;
+
+    font-size: 12px;
+    overflow: hidden;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    border-radius: 40px;
+    background: #E9E9E9;
+    border: 2px solid white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+
+  .mood {
+    height: 100%;
+    width: 100%;
+
+    @include linear-gradient(to bottom, rgba(183, 153, 251, 1) 0%, rgba(0,0,0,0) 100%);
+
+    background-color: #B76767;
+    background-color: rgba(183, 103, 103, 1);
+  }
+
+}

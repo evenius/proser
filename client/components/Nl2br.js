@@ -3,7 +3,7 @@ const { span,br } = require('preact-hyperscript')
 /**
  * Not the best name, but, new line 2 break
  * @method Nl2b
- * @return {string} – should always be {preact}
+ * @return {VNode} – containing the text with nice linebreaks
  */
 
 const Nl2br = ({text}) => {
@@ -13,10 +13,12 @@ const Nl2br = ({text}) => {
   // So reduce => array will end up with an array
   // So I can efficiently merge in <br/> between all elements
 
-  return ( text.indexOf('\n') !== -1
-    ? span(lines.reduce(function (arr, val) { return arr.concat(val, br()) }, []))
-    : span(text)
-  )
+  //This used to be a phat oneliner
+  if(lines.length > 1) {
+    lines = lines.reduce(function (arr, val) { return arr.concat(val, br()) }, []).slice(0,-1)
+    return span(lines)
+  }
+  return span(text)
 }
 
 module.exports = Nl2br

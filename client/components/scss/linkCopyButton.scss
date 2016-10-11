@@ -1,0 +1,6 @@
+@import 'mixin_callToAction';
+.linkCopyButton {
+  @include callToAction;
+  position: absolute;
+  bottom: 0px;
+}

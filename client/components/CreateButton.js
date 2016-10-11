@@ -8,7 +8,8 @@ require('./scss/createbutton.scss')
  * @return {string} – should always be {preact}
  */
 const Logo = () => input('.createbutton', {
-  value: 'Create new poem'
+  value: 'Create new poem',
+  type: 'text'
 })
 
 module.exports = Logo

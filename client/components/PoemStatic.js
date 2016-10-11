@@ -11,10 +11,11 @@ require('./scss/poem.scss')
  */
 
 const PoemStatic = ({title, author, text}) => {
-  return div('.poem',[
-  h1(title || 'Untitled'),
-  h2(author?'By ' + author:''),
-  p([h(nl2br, {text})])
-])}
+  return div('.poem', [
+    h1(title || 'Untitled'),
+    h2(author ? 'By ' + author : 'Anonymous'),
+    p([h(nl2br, {text})])
+  ])
+}
 
 module.exports = PoemStatic

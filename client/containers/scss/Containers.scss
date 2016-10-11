@@ -1,19 +1,19 @@
 @import "linear-gradient";
 @import "grids";
 
-
 .container {
   position: absolute;
   top:0;
   left: 0;
-  height:100%;
+  height:80vh; //If this is 100% it'll just get TOO DAMN HIGH
+  padding-top: 20vh;
   width:100%;
   margin: 0;
-  padding-top: 20vh;
-  >* {
+  >div {
     display: block;
     position: relative;
     left:25%;
+    height:80vh;
   }
 
   &.serene {
