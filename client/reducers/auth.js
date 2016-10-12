@@ -3,21 +3,13 @@ const __AUTH0_CLIENT_SECRET__ = 'LhW3a3HQiZnmnpN2Rc_Bl3mugAumnBP_oogNOBCdRf-KxNI
 const __AUTH0_DOMAIN__ = 'eveniusgill.eu.auth0.com'
 const __AUTH0_CALLBACK_URL__ = 'http://localhost:2233/callback'
 
-// const Auth0Lock = require('auth0-lock').default
-const AuthService = require('../../shared/util/AuthService')
+const AuthService = require('../lib/AuthService')
 //
 const authService = new AuthService(__AUTH0_CLIENT_ID__, __AUTH0_DOMAIN__, {auth: {redirectUrl: __AUTH0_CALLBACK_URL__}})
 
-// const lock = new Auth0Lock(__AUTH0_CLIENT_ID__, __AUTH0_DOMAIN__, {
-//   auth:
-//   {
-//     redirectUrl: __AUTH0_CALLBACK_URL__,
-//     responseType: 'post'
-//   }
-// })
-
 const auth = (state, action) => {
-  return authService || {}
+  let isAuthed = (state ? state.isAuthed : false)
+  return { isAuthed: !!isAuthed || false, service: authService }
 }
 
 module.exports = auth

@@ -10,7 +10,8 @@ require('./scss/poem.scss')
  * @return {string} – should always be {preact}
  */
 
-const PoemStatic = ({title, author, text}) => {
+const PoemStatic = ({poem}) => {
+  let {title, author, text} = poem
   return div('.poem', [
     h1(title || 'Untitled'),
     h2(author ? 'By ' + author : 'Anonymous'),

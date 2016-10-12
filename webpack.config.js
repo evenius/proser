@@ -4,14 +4,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: ['whatwg-fetch','./client/app.js'],
   devtool: 'eval',
-  resolve: {
-		extensions: ['', '.js'],
-		alias: {
-			// 'react': 'preact-compat',
-			// 'react-dom': 'preact-compat',
-      // 'react-addons-css-transition-group': 'rc-css-transition-group'
-		}
-	},
   module: {
     loaders: [
       {

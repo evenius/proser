@@ -1,5 +1,6 @@
 const express = require('express')
 const session = require('express-session')
+const bodyParser = require('body-parser')
 
 const app = express()
 const Router = express.Router()
@@ -21,13 +22,16 @@ const startServer = function (config) {
   app.set('view engine', 'ejs')
 
   // Start your session!
-  app.use(session({secret : 'wowzaasd786678bas64genereatedforsure', resave: false, saveUninitialized: false}))
+  app.use(session({secret: 'wowzaasd786678bas64genereatedforsure', resave: false, saveUninitialized: false}))
 
   // Set the passport middleware
-  let passport = loadPassport(config)
+  let passport = loadPassport(config, db)
 
   app.use(passport.initialize())
   app.use(passport.session())
+
+  //Support Json body
+  app.use(bodyParser.json())
 
   // Set the routes
   app.use(bindRoutes(Router, passport))

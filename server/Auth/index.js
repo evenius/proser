@@ -3,7 +3,7 @@
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
-loadPassport = function ({domain, clientID, clientSecret, callbackURL}) {
+const loadPassport = function ({domain, clientID, clientSecret, callbackURL}, db) {
   let strategy = new Auth0Strategy({
     domain, clientID, clientSecret, callbackURL
   }, function (accessToken, refreshToken, extraParams, profile, done) {
@@ -11,18 +11,26 @@ loadPassport = function ({domain, clientID, clientSecret, callbackURL}) {
       // extraParams.id_token has the JSON Web Token
       // profile has all the information from the user
     return done(null, profile)
-  });
+  })
+
+  //I call my users 'Authors' coz they're artists
+  let { Author } = db
 
   passport.use(strategy)
 
   // This can be used to keep a smaller payload
   passport.serializeUser(function (user, done) {
-    console.log('serializeUser',user)
-    done(null, user)
+    // Why always update? Sometimes displayName changes, and then the system will
+    // catch that like no one even knew.
+    Author.findOneAndUpdate(
+      {authId: user.id},
+      {$set: {authId: user.id, authorName: user.displayName}},
+      {upsert: true, new: true},
+      done
+    )
   })
 
   passport.deserializeUser(function (user, done) {
-    console.log('deserializeUser',user)
     done(null, user)
   })
 

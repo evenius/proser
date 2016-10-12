@@ -12,11 +12,11 @@ require('./scss/poem.scss')
  * @return {string} – Returns an editable poem for the user
  */
 
-const PoemOwned = ({title, author, text}) => {
+const PoemOwned = ({poem, onInput}) => {
   return div('.poem', [
-    h(ThemeSelecter),
-    h(PoemEntryForm),
-    h(LinkCopyButton)
+    h(ThemeSelecter, {theme: poem.theme}),
+    h(PoemEntryForm, {poem, onInput}),
+    h(LinkCopyButton, {slug: poem.slug})
   ])
 }
 

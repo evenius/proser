@@ -10,11 +10,12 @@ const CreateButton = require('../components/CreateButton')
 require('./scss/Containers.scss') // Container-sass
 require('./scss/landing.scss') // The landing page-sass
 
-const Landing = ({user, auth, dispatch, onClick}) => div('.container.serene', [
+const Landing = ({user, auth, onClick}) => div('.container.serene', [
+  (auth.isAuthed ? h(PoemList, { userPoems: user.poems }) : null),
   div('.landing', [
     h(Logo),
     h(CreateButton, {onClick}),
-    (!user ? '': a({onClick: auth.login},'Sign in to edit your works')
+    (auth.isAuthed ? '' : a({onClick: auth.service.login}, 'Sign in to edit your works')
     )
   ])
 ])
